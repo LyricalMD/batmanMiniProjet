@@ -1,11 +1,13 @@
-
+package mic;
 
 /*
 Inspired by :
 https://github.com/nsadawi/WEKA-API/blob/master/src/Evaluate.java
 */
 
+import mic.FirstClass;
 import weka.core.Instances;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Random;
@@ -92,8 +94,8 @@ public class Comparateur{
     	String[] option1 = new String[3];
     	option1[0]="-F";	option1[1]="2"; 	option1[2]="-E";
 		list.add(new J48());
-    	String[] option2=new String[4];
-    	option2[0]="-C";	option2[1] ="0.3";	option2[2] ="-M";	option2[3] ="1";
+    	String[] option2=new String[3];
+    	option2[0] = "-R";		option2[1] ="-M";	option2[2] ="2"; 
 		list.add(new OneR());
 		String [] option3 = new String[2];
 		option3[0]="-B";	option3[1]= "10";
@@ -191,8 +193,8 @@ public class Comparateur{
 		test.SelectScores();
 		test.SortClassifiers();
 		
-		for (int i = 0; i < test.t.length; i++){
-			test.t[i].affichage();
+		for (int i = 0; i < test.cTab.size(); i++){
+			test.cTab.get(i).affichage();
 			System.out.println();
 		}		
 	}
