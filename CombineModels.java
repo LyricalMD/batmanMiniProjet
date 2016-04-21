@@ -1,4 +1,4 @@
-
+package mic;
 import mic.Comparateur;
 import java.io.FileReader;
 import java.io.PrintWriter;
@@ -49,13 +49,13 @@ public class CombineModels {
     	newC.SortClassifiers();
     	
 		Classifier[] classifiers = {				
+					newC.t[0].nom,
 					newC.t[1].nom,
-					newC.t[2].nom,
-					newC.t[3].nom
+					newC.t[2].nom
 			};
-		/*for (int i =0; i < 3; i++){
+		for (int i =0; i < 3; i++){
 			classifiers[i].setOptions(newC.t[i].options);
-		}*/
+		}
 			
 			Vote voter = new Vote();
 			voter.setClassifiers(classifiers);//needs one or more classifiers
